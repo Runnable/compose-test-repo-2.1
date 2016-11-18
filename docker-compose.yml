@@ -1,0 +1,10 @@
+version: '2'
+services:
+  db:
+    container_name: db
+    image: dtestops/mysql:5.7
+    environment:
+      - "MYSQL_ROOT_PASSWORD=secret"
+    hostname: "database"
+    volumes:
+      - ./configfiles/slave.cnf:/etc/mysql/conf.d/replication.cnf
